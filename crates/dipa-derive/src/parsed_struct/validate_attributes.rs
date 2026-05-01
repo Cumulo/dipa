@@ -3,7 +3,7 @@
 
 use crate::dipa_attribute::{DipaAttrs, FieldBatchingStrategy};
 use crate::parsed_struct::ParsedStruct;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 impl ParsedStruct {
     // Validate `#[dipa(...)]` attributes on a struct. Certain attributes or combinations of

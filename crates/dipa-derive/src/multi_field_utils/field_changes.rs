@@ -5,7 +5,7 @@ use syn::Ident;
 
 mod all_combinations;
 pub(crate) use self::all_combinations::make_bool_combinations;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 /// All of the field indices that have changed within a struct/tuple.
 ///

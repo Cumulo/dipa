@@ -1,7 +1,7 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::multi_field_utils::ChangedFieldIndices;
 use crate::parsed_enum::{delta_owned_type_name, ParsedEnum};
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 impl ParsedEnum {
     /// Generate apply_patch tokens for an enum that has a single variant with multiple

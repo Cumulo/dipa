@@ -172,7 +172,6 @@ pub enum SequenceModificationDeltaOwned<T> {
 mod tests {
     use super::*;
     use crate::dipa_impl_tester::DipaImplTester;
-    use bincode::Options;
 
     /// 1 byte for the u8 length of the Vec that holds all of the patch operations
     const BASE_PATCH_BYTES: usize = 1;
@@ -696,11 +695,7 @@ mod tests {
         let diff: SequenceModificationDelta<()> = SequenceModificationDelta::DeleteFirst;
 
         assert_eq!(
-            bincode::options()
-                .with_varint_encoding()
-                .serialize(&diff)
-                .unwrap()
-                .len(),
+            postcard::to_allocvec(&diff).unwrap().len(),
             1
         );
     }

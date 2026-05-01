@@ -13,7 +13,7 @@ use crate::single_variant_enum::{
 use crate::zst_impl::create_zst_impl;
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 use syn::spanned::Spanned;
 use syn::{parse_macro_input, Data, DeriveInput, Fields};
 use syn::{Error as SynError, Result as SynResult};
@@ -46,11 +46,10 @@ pub fn derive_diff_patch(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
 
     let dipa_attrs = match maybe_parse_raw_dipa_attribute(input.attrs) {
-        Some(attrib) => {
-            let attrib_tokens = attrib.tokens.into();
-
-            Some(parse_macro_input!(attrib_tokens as DipaAttrs))
-        }
+        Some(attrib) => match attrib.parse_args::<DipaAttrs>() {
+            Ok(attrs) => Some(attrs),
+            Err(e) => return e.into_compile_error().into(),
+        },
         None => None,
     }
     .unwrap_or(DipaAttrs::default());

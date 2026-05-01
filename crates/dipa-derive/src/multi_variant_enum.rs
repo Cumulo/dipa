@@ -7,7 +7,7 @@ use crate::parsed_enum::{
     delta_owned_type_name, delta_type_name, make_two_enums_match_statement, DipaAssociatedType,
     EnumVariant, EnumVariantFields, ParsedEnum,
 };
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 use syn::punctuated::Punctuated;
 use syn::spanned::Spanned;
 use syn::{Fields, Ident, Type, TypeReference, Variant};

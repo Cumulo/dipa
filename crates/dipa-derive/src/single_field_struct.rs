@@ -1,5 +1,5 @@
 use crate::impl_dipa;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 use syn::{Ident, Type};
 
 pub(super) fn generate_single_field_struct_impl(

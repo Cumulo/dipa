@@ -2,7 +2,6 @@ use super::Diffable;
 use std::fmt::Debug;
 
 use crate::{CreatedDelta, Patchable};
-use bincode::Options;
 use serde::de::DeserializeOwned;
 use serde::Serialize;
 
@@ -53,15 +52,10 @@ Test Label {:?}
 
         assert_eq!(did_change, self.expected_did_change);
 
-        let delta_bytes = bincode::options()
-            .with_varint_encoding()
-            .serialize(&delta)
-            .unwrap();
+        let delta_bytes = postcard::to_allocvec(&delta).unwrap();
 
-        let patch: <T as Diffable<'s, 'e, T>>::DeltaOwned = bincode::options()
-            .with_varint_encoding()
-            .deserialize(&delta_bytes[..])
-            .unwrap();
+        let patch: <T as Diffable<'s, 'e, T>>::DeltaOwned =
+            postcard::from_bytes(&delta_bytes[..]).unwrap();
         self.start.apply_patch(patch);
 
         assert_eq!(self.start, self.end, "{:?}", self.label);

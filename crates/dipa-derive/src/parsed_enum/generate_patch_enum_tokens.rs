@@ -1,6 +1,6 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::parsed_enum::ParsedEnum;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 impl ParsedEnum {
     /// Create a match statement patching this enum based on the patch this enum variant with another.

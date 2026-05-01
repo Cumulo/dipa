@@ -61,6 +61,7 @@ bincode = "1"
 dipa = { version = "0.1", features = ["derive"] }
 serde = { version = "1", features = ["derive"] }
 ```
+
 </details>
 <p></p>
 
@@ -120,7 +121,7 @@ fn main() {
 
     // ... Pretend you send the data to the client ...
 
-    let deserialized: <MyClientState as dipa::Diffable<'_, '_, MyClientState>>::DeltaOwned = 
+    let deserialized: <MyClientState as dipa::Diffable<'_, '_, MyClientState>>::DeltaOwned =
         bin.deserialize(&serialized).unwrap();
 
     old_client_state.apply_patch(deserialized);
@@ -137,7 +138,7 @@ fn main() {
 
 ## Advanced Usage
 
-For applications where incredibly small payloads are a top priority, you may wish to take advantage of knowledge about how your application works in order to 
+For applications where incredibly small payloads are a top priority, you may wish to take advantage of knowledge about how your application works in order to
 generate even smaller diffs.
 
 For example, say you have the following client state data structure.

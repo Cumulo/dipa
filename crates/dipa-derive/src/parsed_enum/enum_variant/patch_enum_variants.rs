@@ -2,7 +2,7 @@ use crate::dipa_attribute::DipaAttrs;
 use crate::multi_field_utils::ChangedFieldIndices;
 use crate::parsed_enum::{delta_owned_type_name, EnumVariant};
 use syn::Ident;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 impl EnumVariant {
     /// Generate the various patch blocks for an enum variant.

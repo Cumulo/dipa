@@ -12,7 +12,7 @@ mod max_fields_per_batch;
 pub fn maybe_parse_raw_dipa_attribute(attrs: Vec<Attribute>) -> Option<Attribute> {
     attrs
         .into_iter()
-        .find(|a| a.path.segments.last().unwrap().ident.to_string().as_str() == "dipa")
+        .find(|a| a.path().segments.last().unwrap().ident.to_string().as_str() == "dipa")
 }
 
 /// A parsed representation of the #[dipa(...)] container attribute.
@@ -32,12 +32,9 @@ impl Parse for DipaAttrs {
             return Ok(dipa_attrs);
         }
 
-        let content;
-        parenthesized!(content in input);
-
         let opts =
             syn::punctuated::Punctuated::<DipaContainerAttr, syn::token::Comma>::parse_terminated(
-                &content,
+                input,
             )?;
 
         for dipa_attr in opts.into_iter() {

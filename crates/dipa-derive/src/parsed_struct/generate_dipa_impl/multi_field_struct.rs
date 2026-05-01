@@ -4,7 +4,7 @@ use crate::multi_field_utils::{
     make_match_diff_tokens, make_match_patch_tokens, StructOrTupleField,
 };
 use crate::parsed_struct::ParsedStruct;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 use syn::spanned::Spanned;
 use syn::{Ident, Type};
 

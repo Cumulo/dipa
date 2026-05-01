@@ -1,7 +1,7 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::multi_field_utils::ChangedFieldIndices;
 use crate::parsed_enum::{delta_type_name, EnumVariantFields, ParsedEnum};
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 use syn::spanned::Spanned;
 use syn::Ident;
 

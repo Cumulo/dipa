@@ -1,6 +1,6 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::multi_field_utils::ParsedFields;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 impl ParsedFields {
     pub(super) fn generate_delta_type_no_batching(

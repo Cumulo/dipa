@@ -2,7 +2,7 @@
 //! enums.
 
 use syn::Ident;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 pub use self::enum_variant::*;
 pub use self::generate_associated_types::*;

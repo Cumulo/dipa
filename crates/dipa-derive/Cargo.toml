@@ -14,6 +14,7 @@ proc-macro = true
 [dependencies]
 # extra-traits used to #[derive(Debug)] on syn::Lit. Can be removed after we're doing iterating on
 # getting things working.
-syn = {version = "1.0", features = ["extra-traits"] }
+syn = {version = "2.0", features = ["extra-traits"] }
 quote = "1.0"
+proc-macro2 = "1.0"
 

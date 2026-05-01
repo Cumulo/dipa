@@ -1,7 +1,7 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::impl_dipa;
 use crate::parsed_enum::{delta_owned_type_name, delta_type_name, ParsedEnum};
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 mod generate_one_batch_apply_patch_tokens;
 mod generate_one_batch_create_delta_tokens;

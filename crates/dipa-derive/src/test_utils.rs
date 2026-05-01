@@ -1,4 +1,4 @@
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 pub fn assert_tokens_eq(left: &TokenStream2, right: &TokenStream2) {
     assert_eq!(

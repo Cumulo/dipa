@@ -12,17 +12,17 @@ build = "build.rs"
 
 [features]
 derive = ["cumulo-dipa-derive"]
-impl-tester = ["bincode"]
+impl-tester = ["postcard"]
 
 [dependencies]
-bincode = {optional = true, version = "1.3"}
+postcard = {optional = true, version = "1", features = ["use-std"]}
 serde = {version = "1", features = ["derive"]}
 
 # Optional Dependencies
 cumulo-dipa-derive = {optional = true, version = "0.1", path = "./crates/dipa-derive", package = "cumulo-dipa-derive"}
 
 [dev-dependencies]
-bincode = "1.3"
+postcard = {version = "1", features = ["use-std"]}
 
 [workspace]
 members = [

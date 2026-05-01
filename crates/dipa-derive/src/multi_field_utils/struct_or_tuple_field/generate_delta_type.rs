@@ -1,7 +1,7 @@
 use crate::dipa_attribute::{DipaAttrs, FieldBatchingStrategy};
 use crate::multi_field_utils::ParsedFields;
 use syn::Ident;
-use syn::__private::TokenStream2;
+use proc_macro2::TokenStream as TokenStream2;
 
 mod no_batching;
 mod one_batch;

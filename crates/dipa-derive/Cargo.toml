@@ -1,6 +1,6 @@
 [package]
 name = "cumulo-dipa-derive"
-version = "0.1.0"
+version = "0.1.1"
 description = "The derive macro for the cumulo-dipa crate"
 authors = ["Chinedu Francis Nwafili <frankie.nwafili@gmail.com>"]
 edition = "2018"

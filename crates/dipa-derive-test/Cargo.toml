@@ -6,7 +6,7 @@ edition = "2018"
 publish = []
 
 [dependencies]
-dipa = {path = "../../", features = ["impl-tester"]}
-dipa-derive = {path = "../dipa-derive"}
+cumulo-dipa = {path = "../../", features = ["impl-tester"], package = "cumulo-dipa"}
+dipa-derive = {path = "../dipa-derive", package = "cumulo-dipa-derive"}
 trybuild = "1.0"
 serde = {version = "1", features = ["derive"]}

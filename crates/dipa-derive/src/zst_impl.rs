@@ -8,7 +8,7 @@ pub(super) fn create_zst_impl(enum_or_struct_name: &Ident) -> TokenStream2 {
         quote! {()},
         quote! {()},
         quote! {
-            dipa::CreatedDelta {
+            cumulo_dipa::CreatedDelta {
                 delta: (),
                 did_change: false
             }

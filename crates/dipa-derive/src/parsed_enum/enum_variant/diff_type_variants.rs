@@ -79,7 +79,7 @@ impl EnumVariant {
         }
     }
 
-    /// quote!(OneChanged_0(<u16 as dipa::Diffable<'s, 'e, u16>::Delta))
+    /// quote!(OneChanged_0(<u16 as cumulo_dipa::Diffable<'s, 'e, u16>::Delta))
     fn change_same_variant(
         &self,
         associated_type: DipaAssociatedType,
@@ -112,7 +112,7 @@ impl EnumVariant {
                 };
 
                 tys.push(Type::Verbatim(
-                    quote! { <#ty as dipa::Diffable<#lifetime, #ty>>::#associated_type_tokens },
+                    quote! { <#ty as cumulo_dipa::Diffable<#lifetime, #ty>>::#associated_type_tokens },
                 ));
             }
 
@@ -161,7 +161,7 @@ mod tests {
             quote! {OneNoChange},
             quote! {
             ChangedToVariantOne(&'e u16)},
-            quote! { OneChange_0(<u16 as dipa::Diffable<'s, 'e, u16>>::Delta) },
+            quote! { OneChange_0(<u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta) },
         ];
 
         assert_eq!(diff_variants.len(), expected.len());
@@ -182,12 +182,12 @@ mod tests {
             quote! {TwoNoChange},
             quote! {
             ChangedToVariantTwo(&'e u16, &'e u32)},
-            quote! { TwoChange_0(<u16 as dipa::Diffable<'s, 'e, u16>>::Delta) },
-            quote! { TwoChange_1(<u32 as dipa::Diffable<'s, 'e, u32>>::Delta) },
+            quote! { TwoChange_0(<u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta) },
+            quote! { TwoChange_1(<u32 as cumulo_dipa::Diffable<'s, 'e, u32>>::Delta) },
             quote! {
                 TwoChange_0_1(
-                    <u16 as dipa::Diffable<'s, 'e, u16>>::Delta,
-                    <u32 as dipa::Diffable<'s, 'e, u32>>::Delta
+                    <u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta,
+                    <u32 as cumulo_dipa::Diffable<'s, 'e, u32>>::Delta
                 )
             },
         ];

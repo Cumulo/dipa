@@ -226,18 +226,18 @@ fn impl_dipa(
     apply_patch_inner: TokenStream2,
 ) -> TokenStream2 {
     let tokens = quote! {
-     impl<'s, 'e> dipa::Diffable<'s, 'e, #enum_or_struct_name> for #enum_or_struct_name {
+     impl<'s, 'e> cumulo_dipa::Diffable<'s, 'e, #enum_or_struct_name> for #enum_or_struct_name {
         type Delta = #delta_type;
 
         type DeltaOwned = #delta_owned_type;
 
         fn create_delta_towards (&'s self, end_state: &'e #enum_or_struct_name)
-          -> dipa::CreatedDelta<Self::Delta> {
+          -> cumulo_dipa::CreatedDelta<Self::Delta> {
             #create_delta_inner
         }
      }
 
-     impl<'s, 'e> dipa::Patchable<#delta_owned_type> for #enum_or_struct_name {
+     impl<'s, 'e> cumulo_dipa::Patchable<#delta_owned_type> for #enum_or_struct_name {
         fn apply_patch (&mut self, patch: #delta_owned_type) {
             #apply_patch_inner
         }

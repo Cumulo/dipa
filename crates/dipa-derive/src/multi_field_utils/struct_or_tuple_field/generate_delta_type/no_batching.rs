@@ -19,10 +19,10 @@ impl ParsedFields {
             let ty = &field.ty;
 
             delta_fields.push(quote! {
-                #field_name: <#ty as dipa::Diffable<'s, 'e, #ty>>::Delta
+                #field_name: <#ty as cumulo_dipa::Diffable<'s, 'e, #ty>>::Delta
             });
             delta_owned_fields.push(quote! {
-                #field_name: <#ty as dipa::Diffable<'static, 'static, #ty>>::DeltaOwned
+                #field_name: <#ty as cumulo_dipa::Diffable<'static, 'static, #ty>>::DeltaOwned
             });
         }
 
@@ -81,15 +81,15 @@ mod tests {
             #[derive(serde::Serialize,)]
             #[allow(non_camel_case_types)]
             pub struct MyStructDelta<'s, 'e> {
-                field_a: <u16 as dipa::Diffable<'s, 'e, u16>>::Delta,
-                field_b: <u32 as dipa::Diffable<'s, 'e, u32>>::Delta
+                field_a: <u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta,
+                field_b: <u32 as cumulo_dipa::Diffable<'s, 'e, u32>>::Delta
             }
 
             #[derive(serde::Deserialize,)]
             #[allow(non_camel_case_types)]
             pub struct MyStructDeltaOwned {
-                field_a: <u16 as dipa::Diffable<'static, 'static, u16>>::DeltaOwned,
-                field_b: <u32 as dipa::Diffable<'static, 'static, u32>>::DeltaOwned
+                field_a: <u16 as cumulo_dipa::Diffable<'static, 'static, u16>>::DeltaOwned,
+                field_b: <u32 as cumulo_dipa::Diffable<'static, 'static, u32>>::DeltaOwned
             }
         };
 

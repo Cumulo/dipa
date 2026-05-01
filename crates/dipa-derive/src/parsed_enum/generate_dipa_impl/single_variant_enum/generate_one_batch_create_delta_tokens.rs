@@ -71,7 +71,7 @@ impl ParsedEnum {
                         #(#match_blocks)*
                     };
 
-                    dipa::CreatedDelta {
+                    cumulo_dipa::CreatedDelta {
                         delta,
                         did_change,
                     }
@@ -151,7 +151,7 @@ mod tests {
                         (true, true) => MyEnumDelta::Change_0_1(diff0.delta, diff1.delta),
                     };
 
-                    dipa::CreatedDelta {
+                    cumulo_dipa::CreatedDelta {
                         delta,
                         did_change,
                     }

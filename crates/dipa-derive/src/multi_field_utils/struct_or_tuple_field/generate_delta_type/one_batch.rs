@@ -26,10 +26,10 @@ impl ParsedFields {
             for idx in change_combinations.iter() {
                 let ty = &self.fields[*idx as usize].ty;
                 changed_delta_tys.push(quote! {
-                    <#ty as dipa::Diffable<'s, 'e, #ty>>::Delta
+                    <#ty as cumulo_dipa::Diffable<'s, 'e, #ty>>::Delta
                 });
                 changed_owned_tys.push(quote! {
-                    <#ty as dipa::Diffable<'static, 'static, #ty>>::DeltaOwned
+                    <#ty as cumulo_dipa::Diffable<'static, 'static, #ty>>::DeltaOwned
                 });
             }
 
@@ -111,11 +111,11 @@ mod tests {
             #[allow(non_camel_case_types, missing_docs)]
             pub enum MyStructDelta<'s, 'e> {
                 NoChange,
-                Change_0(<u16 as dipa::Diffable<'s, 'e, u16>>::Delta),
-                Change_1(<u32 as dipa::Diffable<'s, 'e, u32>>::Delta),
+                Change_0(<u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta),
+                Change_1(<u32 as cumulo_dipa::Diffable<'s, 'e, u32>>::Delta),
                 Change_0_1(
-                    <u16 as dipa::Diffable<'s, 'e, u16>>::Delta,
-                    <u32 as dipa::Diffable<'s, 'e, u32>>::Delta
+                    <u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta,
+                    <u32 as cumulo_dipa::Diffable<'s, 'e, u32>>::Delta
                 )
             }
 
@@ -123,11 +123,11 @@ mod tests {
             #[allow(non_camel_case_types, missing_docs)]
             pub enum MyStructDeltaOwned {
                 NoChange,
-                Change_0(<u16 as dipa::Diffable<'static, 'static, u16>>::DeltaOwned),
-                Change_1(<u32 as dipa::Diffable<'static, 'static, u32>>::DeltaOwned),
+                Change_0(<u16 as cumulo_dipa::Diffable<'static, 'static, u16>>::DeltaOwned),
+                Change_1(<u32 as cumulo_dipa::Diffable<'static, 'static, u32>>::DeltaOwned),
                 Change_0_1(
-                    <u16 as dipa::Diffable<'static, 'static, u16>>::DeltaOwned,
-                    <u32 as dipa::Diffable<'static, 'static, u32>>::DeltaOwned
+                    <u16 as cumulo_dipa::Diffable<'static, 'static, u16>>::DeltaOwned,
+                    <u32 as cumulo_dipa::Diffable<'static, 'static, u32>>::DeltaOwned
                 )
             }
         };

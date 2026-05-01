@@ -150,7 +150,7 @@ fn generate_multi_variant_enum_with_data_impl(
                 .map(|f| {
                     let ty = &f.ty;
 
-                    Type::Verbatim(quote! { <#ty as dipa::Diffable<'s, 'e, #ty>>::Delta })
+                    Type::Verbatim(quote! { <#ty as cumulo_dipa::Diffable<'s, 'e, #ty>>::Delta })
                 })
                 .collect();
 
@@ -241,7 +241,7 @@ fn no_data_diff_match(enum_name: &syn::Ident, variants: &[EnumVariant]) -> Token
 
             diff_match_branches.push(quote! {
                 (Self::#variant_name_1, Self::#variant_name_2) => {
-                    dipa::CreatedDelta {
+                    cumulo_dipa::CreatedDelta {
                         delta: Self::#variant_name_2,
                         did_change: #did_change,
                     }

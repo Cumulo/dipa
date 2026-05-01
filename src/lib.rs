@@ -25,7 +25,7 @@
 extern crate serde;
 
 #[cfg(feature = "derive")]
-pub use dipa_derive::DiffPatch;
+pub use cumulo_dipa_derive::DiffPatch;
 
 mod sequence;
 

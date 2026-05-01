@@ -59,7 +59,7 @@ impl EnumVariant {
     ///   ) => {
     ///       let delta = MyEnumDelta::MyVariantNoChange;
     ///
-    ///       dipa::CreatedDelta {
+    ///       cumulo_dipa::CreatedDelta {
     ///           delta,
     ///           did_change: false,
     ///       }
@@ -77,7 +77,7 @@ impl EnumVariant {
                 #enum_name::#variant,
                 #enum_name::#variant,
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: #diff_ty::#variant_no_change,
                     did_change: false
                 }
@@ -104,7 +104,7 @@ impl EnumVariant {
     ///
     ///       let did_change = diff_0.did_change || diff_1.did_change;
     ///
-    ///       dipa::CreatedDelta {
+    ///       cumulo_dipa::CreatedDelta {
     ///           delta,
     ///           did_change,
     ///       }
@@ -143,7 +143,7 @@ impl EnumVariant {
 
                 #match_diff_statements
 
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta,
                     did_change,
                 }
@@ -158,7 +158,7 @@ impl EnumVariant {
     ///       MyEnum::MyVariant,
     ///       MyEnum::AnotherVariant,
     ///   ) => {
-    ///       dipa::CreatedDelta {
+    ///       cumulo_dipa::CreatedDelta {
     ///           delta: MyEnumDelta::ChangedToAnotherVariant,
     ///           did_change: false,
     ///       }
@@ -184,7 +184,7 @@ impl EnumVariant {
                 #enum_name::#variant_1#variant_1_fields,
                 #enum_name::#variant_2,
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: #diff_ty::#changed_to_variant,
                     did_change: true,
                 }
@@ -199,7 +199,7 @@ impl EnumVariant {
     ///       MyEnum::MyVariant,
     ///       MyEnum::AnotherVariant { some_field, another_field },
     ///   ) => {
-    ///       dipa::CreatedDelta {
+    ///       cumulo_dipa::CreatedDelta {
     ///           delta: MyEnumDelta::ChangedToAnotherVariant(some_field, another_field),
     ///           did_change: true,
     ///       }
@@ -228,7 +228,7 @@ impl EnumVariant {
                 #enum_name::#variant_1#variant_1_pattern_fields,
                 #enum_name::#variant_2#variant_2_pattern_fields,
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: #diff_ty::#changed_to_variant#variant_2_field_values,
                     did_change: true,
                 }
@@ -288,7 +288,7 @@ mod tests {
               MyEnum::FirstVariant,
               MyEnum::FirstVariant,
           ) => {
-              dipa::CreatedDelta {
+              cumulo_dipa::CreatedDelta {
                   delta: MyEnumDelta::FirstVariantNoChange,
                   did_change: false
               }
@@ -322,7 +322,7 @@ mod tests {
                 MyEnum::FirstVariant,
                 MyEnum::Variant2,
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: MyEnumDelta::ChangedToVariantVariant2,
                     did_change: true,
                 }
@@ -366,7 +366,7 @@ mod tests {
                 MyEnum::FirstVariant,
                 MyEnum::Variant2 { field: end_field },
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: MyEnumDelta::ChangedToVariantVariant2(end_field),
                     did_change: true,
                 }
@@ -410,7 +410,7 @@ mod tests {
                 MyEnum::FirstVariant,
                 MyEnum::Variant2(end_field),
             ) => {
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta: MyEnumDelta::ChangedToVariantVariant2(end_field),
                     did_change: true,
                 }
@@ -489,7 +489,7 @@ mod tests {
 
                 let did_change = diff0.did_change || diff1.did_change;
 
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta,
                     did_change,
                 }
@@ -568,7 +568,7 @@ mod tests {
 
                 let did_change = diff0.did_change || diff1.did_change;
 
-                dipa::CreatedDelta {
+                cumulo_dipa::CreatedDelta {
                     delta,
                     did_change,
                 }

@@ -112,7 +112,7 @@ mod tests {
             pub enum MyEnumDelta<'s, 'e> {
                 OneNoChange,
                 ChangedToVariantOne(&'e u16),
-                OneChange_0(<u16 as dipa::Diffable<'s, 'e, u16>>::Delta),
+                OneChange_0(<u16 as cumulo_dipa::Diffable<'s, 'e, u16>>::Delta),
                 TwoNoChange,
                 ChangedToVariantTwo,
             }
@@ -136,7 +136,7 @@ mod tests {
             pub enum MyEnumDeltaOwned {
                 OneNoChange,
                 ChangedToVariantOne(u16),
-                OneChange_0(<u16 as dipa::Diffable<'static, 'static, u16>>::DeltaOwned),
+                OneChange_0(<u16 as cumulo_dipa::Diffable<'static, 'static, u16>>::DeltaOwned),
                 TwoNoChange,
                 ChangedToVariantTwo,
             }

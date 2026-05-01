@@ -1,4 +1,6 @@
-# dipa [![Actions Status](https://github.com/chinedufn/dipa/workflows/ci/badge.svg)](https://github.com/chinedufn/dipa/actions) [![docs](https://docs.rs/dipa/badge.svg)](https://docs.rs/dipa)
+# cumulo-dipa [![Actions Status](https://github.com/Cumulo/dipa/workflows/ci/badge.svg)](https://github.com/Cumulo/dipa/actions) [![docs](https://docs.rs/cumulo-dipa/badge.svg)](https://docs.rs/cumulo-dipa)
+
+> This is a fork of [chinedufn/dipa](https://github.com/chinedufn/dipa), republished as `cumulo-dipa` for use in the Cumulo ecosystem.
 
 > dipa makes it easy to efficiently delta encode large Rust data structures.
 

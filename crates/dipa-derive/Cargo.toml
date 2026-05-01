@@ -1,12 +1,12 @@
 [package]
-name = "dipa-derive"
+name = "cumulo-dipa-derive"
 version = "0.1.0"
-description = "The derive macro for the dipa crate"
+description = "The derive macro for the cumulo-dipa crate"
 authors = ["Chinedu Francis Nwafili <frankie.nwafili@gmail.com>"]
 edition = "2018"
 keywords = ["delta", "encode", "compress", "diff", "patch"]
 license = "MIT/Apache-2.0"
-repository = "https://github.com/chinedufn/dipa"
+repository = "https://github.com/Cumulo/dipa"
 
 [lib]
 proc-macro = true

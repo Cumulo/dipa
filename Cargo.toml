@@ -11,7 +11,7 @@ repository = "https://github.com/Cumulo/dipa"
 build = "build.rs"
 
 [features]
-derive = ["dipa-derive"]
+derive = ["cumulo-dipa-derive"]
 impl-tester = ["bincode"]
 
 [dependencies]

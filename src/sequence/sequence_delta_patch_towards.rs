@@ -66,7 +66,8 @@ where
                     Some(
                         SequenceModificationDelta::ReplaceManySameAmountAddedAndRemoved {
                             index: previous_start_idx.unwrap() + 1,
-                            new: &target_state[previous_target_idx.unwrap() + 1..previous_target_idx.unwrap() + target_advance],
+                            new: &target_state[previous_target_idx.unwrap() + 1
+                                ..previous_target_idx.unwrap() + target_advance],
                         },
                     )
                 }
@@ -74,7 +75,8 @@ where
                     Some(SequenceModificationDelta::ReplaceMany {
                         start_idx: previous_start_idx.unwrap() + 1,
                         items_to_replace: start_advance - 1,
-                        new: &target_state[previous_target_idx.unwrap() + 1..previous_target_idx.unwrap() + target_advance],
+                        new: &target_state[previous_target_idx.unwrap() + 1
+                            ..previous_target_idx.unwrap() + target_advance],
                     })
                 }
                 (start_advance, target_advance) if start_advance == 2 && target_advance == 1 => {

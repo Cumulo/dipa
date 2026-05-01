@@ -1,7 +1,7 @@
 use crate::multi_field_utils::{ParsedFields, StructOrTupleField};
+use proc_macro2::TokenStream as TokenStream2;
 use std::ops::Deref;
 use syn::Ident;
-use proc_macro2::TokenStream as TokenStream2;
 
 /// Tuple -> MyEnum::Variant(...)
 /// Struct -> MyEnum::Variant { ... }

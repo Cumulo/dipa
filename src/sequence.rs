@@ -694,9 +694,6 @@ mod tests {
     fn sequence_variant_one_byte() {
         let diff: SequenceModificationDelta<()> = SequenceModificationDelta::DeleteFirst;
 
-        assert_eq!(
-            postcard::to_allocvec(&diff).unwrap().len(),
-            1
-        );
+        assert_eq!(postcard::to_allocvec(&diff).unwrap().len(), 1);
     }
 }

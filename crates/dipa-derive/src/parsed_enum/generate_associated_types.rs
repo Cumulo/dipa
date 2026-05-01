@@ -1,9 +1,9 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::parsed_enum::{delta_owned_type_name, delta_type_name, ParsedEnum};
+use proc_macro2::TokenStream as TokenStream2;
 use quote::ToTokens;
 use quote::__private::TokenStream;
 use syn::Ident;
-use proc_macro2::TokenStream as TokenStream2;
 
 impl ParsedEnum {
     /// Generate the tokens for the diff or patch type for an enum that has at least one variant

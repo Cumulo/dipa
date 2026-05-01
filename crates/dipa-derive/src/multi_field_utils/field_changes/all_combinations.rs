@@ -60,7 +60,7 @@ impl ChangedFieldIndices {
 /// So for two fields the four combinations are:
 ///
 ///   [false, false], [true, false], [false, true], [true, true]
-pub(in crate) fn make_bool_combinations(
+pub(crate) fn make_bool_combinations(
     field_count: usize,
     max_fields_per_batch: Option<u8>,
 ) -> Vec<Vec<bool>> {

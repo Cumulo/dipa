@@ -1,7 +1,7 @@
 use crate::impl_dipa;
 
-use syn::Type;
 use proc_macro2::TokenStream as TokenStream2;
+use syn::Type;
 
 /// #[derive(Dipa)] for an enum with one struct variant that has one field.
 ///

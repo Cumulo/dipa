@@ -12,8 +12,8 @@ use crate::single_variant_enum::{
 };
 use crate::zst_impl::create_zst_impl;
 use proc_macro::TokenStream;
-use quote::quote;
 use proc_macro2::TokenStream as TokenStream2;
+use quote::quote;
 use syn::spanned::Spanned;
 use syn::{parse_macro_input, Data, DeriveInput, Fields};
 use syn::{Error as SynError, Result as SynResult};

@@ -1,6 +1,6 @@
+use proc_macro2::TokenStream as TokenStream2;
 use quote::__private::Span;
 use std::ops::{Deref, DerefMut};
-use proc_macro2::TokenStream as TokenStream2;
 use syn::spanned::Spanned;
 use syn::{Ident, Type};
 

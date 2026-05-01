@@ -1,11 +1,11 @@
 use crate::dipa_attribute::DipaContainerAttr;
 use crate::{SynError, SynResult};
 use proc_macro2::Span;
+use proc_macro2::TokenStream as TokenStream2;
 use std::str::FromStr;
 use syn::parse::ParseBuffer;
-use syn::LitStr;
-use proc_macro2::TokenStream as TokenStream2;
 use syn::spanned::Spanned;
+use syn::LitStr;
 
 /// The strategy used to encode the delta of a struct or enum variant that has 2 or more fields.
 ///

@@ -1,8 +1,8 @@
 //! Functions and types to help with code generation for implementation Diffable / Patchable for
 //! enums.
 
-use syn::Ident;
 use proc_macro2::TokenStream as TokenStream2;
+use syn::Ident;
 
 pub use self::enum_variant::*;
 pub use self::generate_associated_types::*;

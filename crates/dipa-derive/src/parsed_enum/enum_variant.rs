@@ -1,5 +1,5 @@
-use syn::Ident;
 use proc_macro2::TokenStream as TokenStream2;
+use syn::Ident;
 
 pub use self::enum_variant_fields::*;
 

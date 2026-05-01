@@ -1,8 +1,8 @@
 use crate::dipa_attribute::DipaAttrs;
 use crate::multi_field_utils::ChangedFieldIndices;
 use crate::parsed_enum::{DipaAssociatedType, EnumVariant};
-use quote::ToTokens;
 use proc_macro2::TokenStream as TokenStream2;
+use quote::ToTokens;
 use syn::{Type, TypeReference};
 
 impl EnumVariant {
